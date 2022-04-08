@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <StackPanel>
+            <ListView Name="List" Width="Auto" Height="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <TextBlock Text="{Binding FirstName}"/>
+                            <TextBlock Text="{Binding LastName}"/>
+                            <TextBlock Text="{Binding Patronymic}"/>
+                            <TextBlock Text="{Binding Post}"/>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="GetButton" Click="GetButton_Click" Content="GET запрос"/>
+            <Button x:Name="PostButton" Click="PostButton_Click" Content="POST запрос"/>
+
+            
+            
+        </StackPanel>
+    </Grid>
+</Window>
